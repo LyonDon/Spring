@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+        <bean id="helloWorldImpl1" class="com.xrq.aop.HelloWorldImpl1" />
+        <bean id="helloWorldImpl2" class="com.xrq.aop.HelloWorldImpl2" />
+        <bean id="timeHandler" class="com.xrq.aop.TimeHandler" />
+        <bean id="logHandler" class="com.xrq.aop.LogHandler"/>
+        
+        <aop:config proxy-target-class="true"><!-- 这里的proxy-target-class为true表示基于类的代理起作用，即强制切换为CGLib的代理方式 .若不设置或者为false则表示基于接口的代理，即JDK动态代理方式-->
+            <aop:aspect id="time" ref="timeHandler" order="2">
+                <aop:pointcut id="addAllMethod" expression="execution(* com.xrq.aop.HelloWorld.do*(..))" />
+                <aop:before method="printTime" pointcut-ref="addAllMethod" />
+                <aop:after method="printTime" pointcut-ref="addAllMethod" />
+            </aop:aspect>
+            
+            <aop:aspect id="log" ref="logHandler" order="1">
+            	<aop:pointcut  id="addAllLog" expression="execution(* com.xrq.aop.HelloWorld.pr*(..))"/>
+            	<aop:before method="logBefore" pointcut-ref="addAllLog"/>
+            	<aop:after method="logAfter" pointcut-ref="addAllLog"/>
+            </aop:aspect>
+        </aop:config>
+</beans>
