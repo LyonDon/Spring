@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+        
+        <bean id="beanPostProcessor" class="com.IOC.MyBeanPostProcessor"></bean>
+        
+        <bean id="source" class="com.IOC.Source">
+        	<property name="fruit" value="西瓜汁"></property>
+        	<property name="sugar" value="少糖"></property>
+        	<property name="size" value="大杯"></property>
+        </bean>
+        
+        <bean id="source2" class="com.IOC.Source">
+        	<property name="fruit" value="苹果汁"></property>
+        	<property name="sugar" value="多糖"></property>
+        	<property name="size" value="小杯"></property>
+        </bean>
+        
+        <bean id="juiceMaker" class="com.IOC.JuiceMaker"
+        	init-method="init" destroy-method="myDestory">
+        	<property name="beverageShop" value="贡茶"/>
+        	<property name="factory" value="南美"></property>
+			<property name="source" ref="source"></property>        		
+        </bean>
+        
+        <bean id="juiceMaker2" class="com.IOC.JuiceMaker"
+        	init-method="init" destroy-method="myDestory">
+        	<property name="beverageShop" value="喜茶"></property>
+        	<property name="factory" value="东南亚"></property>
+        	<property name="source2" ref="source2"></property>
+        </bean>
+</beans>
