@@ -14,7 +14,7 @@ public class Main {
 	    hw1.printHelloWorld();
 	    System.out.println();
 	    hw1.doPrint();
-	    
+
 	    System.out.println();
 	    hw2.printHelloWorld();
 	    System.out.println();
