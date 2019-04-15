@@ -6,7 +6,7 @@
 
 [test](https://github.com/LyonDon/Spring/tree/master/test)
 
-*	主要包括一些测试用例，包括线程测试，普通测试等
+*	主要包括一些测试程序，包括线程测试，普通测试等
 
 ### spring_transaction
 
