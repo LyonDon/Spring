@@ -1,38 +1,36 @@
 package pencilTest;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int n = scanner.nextInt();
-		System.out.println(findStep(n));
-//		boolean x=("ab"==new String("ab").intern());
-//		boolean y=("a"+"b"=="ab");
-//		int z=Integer.MAX_VALUE-Integer.MIN_VALUE;
-//		Object aa=0.1*6;
-//		System.out.println(aa);
-//		System.out.println(z);
-//		System.out.println(x);
-//		System.out.println(y);
-		
-	}
+	static String[] room = { "A", "B", "C" };
 
-	public static long findStep(int n) {
-		if (n < 0) {
-			n=-n;
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] strs = br.readLine().split(",");
+		int[] a = new int[strs.length];
+		int k = 0;
+		for (int i = 0; i < strs.length; i++) {
+			a[i] = Integer.parseInt(strs[i]);
+			k ^= a[i];
 		}
-		long res;
-		if (n == 1 || n == 2 || n == 0) {
-			return n;
-		}
-		if (n % 2 == 0) {
-			res=findStep(n / 2) + 1;
+
+		if (k == 0) {
+			// P-position，先手必败
+			System.out.println(1);
 		} else {
-			long x = findStep((n + 1) / 2) + 2;
-			long y = findStep((n - 1) / 2) + 2;
-			res = Math.min(x, y);
+			// N-position，先手必胜
+			for (int i = 0; i < a.length; i++) {
+				// 寻找N-position移动到某个P-position的方法
+				int num = k ^ a[i], tmpXor = num ^ num;
+				if (a[i] - num >= 0 && tmpXor == 0) {
+					System.out.println(room[i] + "," + (a[i] - num));
+					break;
+				}
+			}
 		}
-		return res;
 	}
 }

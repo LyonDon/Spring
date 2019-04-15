@@ -1,15 +1,84 @@
 package pencilTest;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
-//给定一个仅包含01的字符串，可以对其进行一种操作
-//当有两个相邻的字符其中一个是0，另一个是1的时候，可以消除掉这两个字符
-//这样的操作可以一只进行下去直到找不到相邻的0和1为止
-//问这个字符经历操作后的最短长度
 public class String01 {
 	public static void main(String[] args) {
-		BufferedReader bReader=new BufferedReader(new InputStreamReader(System.in));
-//		String.
+		Scanner sc=new Scanner(System.in);
+		String string=sc.nextLine();
+		boolean flagL=judgeLength(string);
+		boolean flagLe=judgeLetter0aA(string);
+		int x=judgeLetterSame(string);
+		if (flagL&&flagLe&&(x==0)) {
+			System.out.println(0);
+		}else {
+			System.out.println(moveTimes(string));
+		}
+		
+	}
+	
+	public static boolean judgeLength(String string) {
+		if (string.length()>20&&string.length()<6) {
+			return false;
+		}
+		return true;
+	}
+	
+	public static boolean judgeLetter0aA(String string){
+		int counti=0;
+		int countj=0;
+		int countm=0;
+		
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i)>=97&&string.charAt(i)<=122) {
+				counti++;
+			}
+		}
+		for (int j = 0; j < string.length(); j++) {
+			if (string.charAt(j)>=65&&string.charAt(j)<=90) {
+				countj++;
+			}
+		}
+		for (int m = 0; m < string.length(); m++) {
+			if (string.charAt(m)>=48&&string.charAt(m)<=57) {
+				countm++;
+			}
+		}
+		
+		if (counti>0&&countj>0&&countm>0) 
+			return true;
+		return false;
+	}
+	
+	public static int judgeLetterSame(String string) {
+		int countsame=0;
+		for (int k = 0; k < string.length()-1; k++) {
+			if (string.charAt(k)==string.charAt(k+1)) {
+				countsame++;
+			}else {
+				countsame=0;
+			}
+		}
+		int x=countsame/3;
+		return x;
+	}
+	
+	public static int moveTimes(String string) {
+		int count=0;
+		if (judgeLetter0aA(string)==false) {
+			count++;
+		}
+		if (judgeLength(string)==false) {
+			if (string.length()<6) {
+				count+=6-string.length();
+			}
+			if (string.length()>20) {
+				count+=string.length()-20;
+			}
+		}
+		if (judgeLetterSame(string)>0) {
+			count+=judgeLetterSame(string);
+		}
+		return count;
 	}
 }
