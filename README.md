@@ -26,4 +26,8 @@
 
 *	一个IOC项目，使用XML配置文档的方式，实现了控制反转
 
+### MyBatis
 
+[mybatis](https://github.com/LyonDon/Spring/tree/batis/MybatisProject)
+
+*	一个mybatis项目，实现数据库表项读取与显示
