@@ -11,13 +11,16 @@ public class Main {
 	static HashMap<Long, Long> map = new HashMap<Long, Long>();
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
-		map.put(-1L, 0L);
-		map.put(0L, 1L);
-		map.put(1L, 1L);
-		long long1 = Long.valueOf(bReader.readLine());
-		long result = check(long1);
-		System.out.println(result);
+		int i = 0;
+		int a = i++;
+		int b = ++a;
+		int c = a + b;
+		int d = (a == 1) ? b : c;
+		System.out.println(i);
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
 	}
 
 	public static long check(Long n) {
@@ -26,7 +29,7 @@ public class Main {
 		}
 		Long log = log2(n);
 
-		Long x = check(n-(long) Math.pow(2, log)) + check((long) Math.pow(2, log + 1) - n - 2);
+		Long x = check(n - (long) Math.pow(2, log)) + check((long) Math.pow(2, log + 1) - n - 2);
 		map.put(n, x);
 		return x;
 	}
