@@ -24,5 +24,8 @@ public class Test2 {
 		String string="string";
 		int x1=string.charAt(2);
 		System.out.println(x1);
+		String sssString="mwarbwiyrkptolflyoehgneakwkjypyuvsmrwpycsvrvcxjtholdhaxgsfcnmcqcztywyfxmtjqbjpabuemymzmqhmqptzoyghavetxfadwrxulyvpdmnvmknfhlplaqbmaasqicbwxwfxzyxkgwiltpwjfbdmjzrrzzqkqrxuosbymfpztsssangraylrvdbdekfcyzajailztgzxpuxzutqehgcfdvoiqlktjuyirmqhzttiyavflldthcutoxtgzcboiurxwxnsyoekndxwexivojpomsnwhlqqzzopifhnppogv";
+		System.out.println(sssString.substring(1,6));
+		System.out.println(sssString.length());
 	}
 }
