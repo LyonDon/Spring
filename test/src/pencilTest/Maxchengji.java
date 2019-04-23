@@ -11,19 +11,19 @@ public class Maxchengji {
 	//找出最大的三个正数和最小的两个负数
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
-		int length=scanner.nextLine().trim().split(" ").length;
-		System.out.println(length);
-		int[] num=new int[length];
+		int length=scanner.nextInt();
+//		System.out.println(length);
+		long[] num=new long[length];
 		for (int i = 0; i < length; i++) {
 			num[i]=scanner.nextInt();
-			System.out.println(num[i]);
+//			System.out.println(num[i]);
 		}
-		int max1=Integer.MIN_VALUE;
-		int max2=Integer.MIN_VALUE;
-		int max3=Integer.MIN_VALUE;
+		long max1=0;
+		long max2=0;
+		long max3=0;
 		
-		int min1=Integer.MAX_VALUE;
-		int min2=Integer.MAX_VALUE;
+		long min1=0;
+		long min2=0;
 		for (int i = 0; i < num.length; i++) {
 			if(num[i]>max1){
 				max3=max2;
@@ -41,10 +41,17 @@ public class Maxchengji {
 				min1=num[i];
 			}else if (num[i]<min2) {
 				min2=num[i];
+			}else {
+				continue;
 			}
 		}
-		int x=max1*max2*max2;
-		int y=min1*min2*max1;
+		long x=max1*max2*max3;
+		long y=min1*min2*max1;
+//		System.out.println(max1);
+//		System.out.println(max2);
+//		System.out.println(max3);
+//		System.out.println(min1);
+//		System.out.println(min2);
 		
 		if (x>y) {
 			System.out.println(x);
