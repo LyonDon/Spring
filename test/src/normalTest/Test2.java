@@ -1,5 +1,7 @@
 package normalTest;
 
+import java.util.TreeSet;
+
 /**
  * 
  * @author Administrator
@@ -27,5 +29,21 @@ public class Test2 {
 		String sssString="mwarbwiyrkptolflyoehgneakwkjypyuvsmrwpycsvrvcxjtholdhaxgsfcnmcqcztywyfxmtjqbjpabuemymzmqhmqptzoyghavetxfadwrxulyvpdmnvmknfhlplaqbmaasqicbwxwfxzyxkgwiltpwjfbdmjzrrzzqkqrxuosbymfpztsssangraylrvdbdekfcyzajailztgzxpuxzutqehgcfdvoiqlktjuyirmqhzttiyavflldthcutoxtgzcboiurxwxnsyoekndxwexivojpomsnwhlqqzzopifhnppogv";
 		System.out.println(sssString.substring(1,6));
 		System.out.println(sssString.length());
+		
+		char a='4'-'0';
+		char b='8'-'0';
+		System.out.println(a*b);
+		
+		TreeSet<String> set=new TreeSet<String>();
+		set.add("a");
+		set.add("b");
+		set.add("c");
+		set.add("ba");
+		set.add("ab");
+		set.add("abc");
+		set.add("cba");
+		
+		System.out.println(set);
+		
 	}
 }
