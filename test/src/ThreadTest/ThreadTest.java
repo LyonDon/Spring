@@ -24,6 +24,16 @@ class Test{
 }
 
 public class ThreadTest{
+	public class Task implements Runnable {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
+
 	public static void main(String[] args) {
 		Test mv=new Test();
 		Thread t1=new ThreadExample(mv);

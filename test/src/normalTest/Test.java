@@ -2,6 +2,7 @@ package normalTest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,13 +21,45 @@ public class Test {
         System.out.println(Math.log(10)/Math.log(2));
         char s=(char)1000000000;
         
-        Scanner scanner=new Scanner(System.in);
-//        long sss=scanner.nextLong();
-        String sss=scanner.nextLine();
-        System.out.println(sss);
+//        Scanner scanner=new Scanner(System.in);
+////        long sss=scanner.nextLong();
+//        String sss=scanner.nextLine();
+//        System.out.println(sss);
+//        
+//        BufferedReader brBufferedReader=new BufferedReader(new InputStreamReader(System.in));
+//        String sss1=brBufferedReader.readLine();
+//        System.out.println(sss1);
         
-        BufferedReader brBufferedReader=new BufferedReader(new InputStreamReader(System.in));
-        String sss1=brBufferedReader.readLine();
-        System.out.println(sss1);
+        byte s21=10;
+        int b=(int)s21;
+        System.out.println(b);
+        
+        int s22=10;
+        byte b1=(byte)s21;
+        System.out.println(b1);
+        
+        double s23=(double)s22;
+        System.out.println(s23);
+        System.out.println();
+        
+        int[] arr1=new int[]{1,2,3};
+        int[] arr2=new int[]{4,5,6};
+        System.arraycopy(arr1, 0, arr2, 1,2);
+        for (int i = 0; i < arr2.length; i++) {
+			System.out.print(arr2[i]);
+		}
+        System.out.println();
+        for (int i = 0; i < arr2.length; i++) {
+			System.out.print(arr1[i]);
+		}
+        
+        Integer xInteger=new Integer(123);
+        Integer yInteger=Integer.valueOf(123);
+        Integer zInteger=Integer.valueOf(123);
+        System.out.println(zInteger==yInteger);
+        
+        String string1="abc";
+        String string2=String.valueOf("abc");
+        System.out.println(string1==string2);
 	}
 }
