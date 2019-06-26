@@ -14,8 +14,6 @@ public class Test22 {
 	ArrayList<String> res = new ArrayList<String>();
 
 	public void sort(String in) {
-
-
 		System.out.println(res);
 	}
 
