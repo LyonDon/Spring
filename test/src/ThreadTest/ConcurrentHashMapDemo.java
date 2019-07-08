@@ -1,4 +1,4 @@
-package ThreadTest;
+package threadTest;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

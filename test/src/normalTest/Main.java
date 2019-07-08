@@ -19,6 +19,11 @@ public class Main {
 		int count=0;
 		count=count++;
 		System.out.println("count="+count);
+		
+		String string1="123";
+		String string2="321";
+		int res=string1.compareTo(string2);
+		System.out.println(res);
 	}
 
 }

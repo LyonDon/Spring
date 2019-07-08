@@ -1,5 +1,6 @@
 package normalTest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -31,6 +32,19 @@ public class Testnew {
 		int[] y={1,23,4};
 		System.out.println(Arrays.equals(x,y));
 		System.out.println(Arrays.toString(z));
+		
+		ArrayList<Integer> arrayList=new ArrayList<Integer>();
+		arrayList.add(1);
+		arrayList.add(2);
+		arrayList.add(3);
+		arrayList.add(4);
+		System.out.println(arrayList);	
+		ArrayList<Integer> resArrayList=new ArrayList<Integer>();
+		resArrayList.addAll(arrayList);
+		System.out.println(resArrayList);
+		ArrayList<Integer> sos=new ArrayList<Integer>();
+		sos=arrayList;
+		System.out.println(sos);
 	}  
 //	public static class TreeNode{
 //		int val;

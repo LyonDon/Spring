@@ -1,4 +1,4 @@
-package ThreadTest;
+package threadTest;
 
 class ThreadExample extends Thread{
 	private Test mv;

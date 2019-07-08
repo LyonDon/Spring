@@ -1,4 +1,4 @@
-package ThreadTest;
+package threadTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
