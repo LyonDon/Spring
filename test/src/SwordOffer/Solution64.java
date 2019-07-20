@@ -29,7 +29,6 @@ public class Solution64 {
 			}
 		}
 		return resArrayList;
-		
 	}
 	
 	public int getMax(int[] array){

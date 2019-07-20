@@ -10,6 +10,29 @@ package SwordOffer;
  */
 public class Solution66 {
 	public int movingCount(int threshold, int rows, int cols) {
-		
+		int[][] flag=new int[rows][cols];//记录走过的位置
+		return help(0,0,rows,cols,flag,threshold);
 	}
+	
+	public static int help(int row,int col,int rows,int cols,int[][] flag,int threshold) {
+		if(row<0||row>=rows||col<0||col>=cols||num_Sum(row)+num_Sum(col)>threshold||flag[row][col]==1){
+			return 0;
+		}
+		flag[row][col]=1;
+		return help(row-1, col, rows, cols, flag, threshold)+
+				help(row, col-1, rows, cols, flag, threshold)+
+				help(row+1, col, rows, cols, flag, threshold)+
+				help(row, col+1, rows, cols, flag, threshold)+1;
+	}
+	
+	public static int num_Sum(int num){
+		int sum=0;
+		do{
+			sum+=num%10;
+			num/=10;
+		}while(num%10!=0);
+		
+		return sum;
+	}
+	
 }
