@@ -18,7 +18,6 @@ public class Main {
 	            {
 	                if(s.charAt(j)==s.charAt(i))
 	                {
-	                    s[j] = ' ';
 	                }                                            
 	            }
 	        }

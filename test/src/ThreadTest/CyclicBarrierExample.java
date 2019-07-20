@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
  *
  */
 public class CyclicBarrierExample {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		final int totalThread=10;
 		CyclicBarrier cyclicBarrier=new CyclicBarrier(totalThread);
 		ExecutorService service=Executors.newCachedThreadPool();
@@ -24,11 +24,10 @@ public class CyclicBarrierExample {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("after");
 			});
-		
+			Thread.sleep(1000);
 		}
-		
+		System.out.println("after");
 		service.shutdown();
 	}
 }
