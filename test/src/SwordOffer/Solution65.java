@@ -29,19 +29,35 @@ public class Solution65 {
 		return false;
 	}	
 
+	/**
+	 * 
+	 * @param matrix 矩阵
+	 * @param rows 矩阵行
+	 * @param cols 矩阵列
+	 * @param row 当前行
+	 * @param col 当前列
+	 * @param str 输入字符串
+	 * @param pathLength 路径长度
+	 * @param visit 当前位置是否访问过
+	 * @return 返回值
+	 */
 	public static boolean hasPathCore(char[] matrix, int rows, int cols, int row, int col, char[] str, int pathLength,
 			boolean[] visit) {
+		//特殊情况判断
 		if (row < 0 || row >= rows || col < 0 || col >= cols || matrix[row * cols + col] != str[pathLength]
 				|| visit[row * cols + col] == true) {
 			return false;
 		}
+		//设置当前位置为true
 		visit[row * cols + col] = true;
+		//分别判断上下左右位置是否访问过（递归）
 		if (hasPathCore(matrix, rows, cols, row - 1, col, str, pathLength + 1, visit)
 				|| hasPathCore(matrix, rows, cols, row, col - 1, str, pathLength + 1, visit)
 				|| hasPathCore(matrix, rows, cols, row + 1, col, str, pathLength + 1, visit)
 				|| hasPathCore(matrix, rows, cols, row, col + 1, str, pathLength + 1, visit)) {
 			return true;
 		}
+		//设置当前位置未访问过，继续循环
 		visit[row*cols+col]=false;
 		return false;
 	}
