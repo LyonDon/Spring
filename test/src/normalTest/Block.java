@@ -1,4 +1,7 @@
 package normalTest;
+
+import java.util.Stack;
+
 /**
  * 静态方法与构造方法
  * @author Administrator
@@ -16,6 +19,11 @@ public class Block {
 
 	public static void main(String[] args) {
 		Block tB = new Block();
+		Stack<Integer> stack=new Stack<Integer>();
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		System.out.println(stack.peek());
+		System.out.println('A'>'9');
 	}
-
 }

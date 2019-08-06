@@ -1,29 +1,40 @@
 package normalTest;
 
-import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
-
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		int i = 0;
-		int a = i++;
-		int b = ++a;
-		int c = a + b;
-		int d = (a == 1) ? b : c;
-		System.out.println(i);
-		System.out.println(a);
-		System.out.println(b);
-		System.out.println(c);
-		System.out.println(d);
-		
-		int count=0;
-		count=count++;
-		System.out.println("count="+count);
-		
-		String string1="123";
-		String string2="321";
-		int res=string1.compareTo(string2);
-		System.out.println(res);
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int t = scanner.nextInt();
+		for (int j = 0;j<t; j++) {
+			int n = scanner.nextInt();
+			long[] array = new long[n];
+			for (int i = 0; i < n; i++) {
+				array[i] = scanner.nextLong();
+			}
+			
+			if (get(array)==true) {
+				System.out.println("YES");
+			}
+			if (get(array)==false) {
+				System.out.println("NO");
+			}
+		}
 	}
-
+	
+	public static boolean get(long[] array){
+		int n=array.length;
+		if (n < 3) {
+			return false;
+		}
+		if (array[0] != array[n - 1]) {
+			return false;
+		}
+		for (int i = 1; i < array.length-1; i++) {
+			if (array[i]>array[i-1]+array[i+1]) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

@@ -38,6 +38,8 @@ public class Test {
 		resArrayList2.add(new ArrayList<Integer>(list));
 		System.out.println(resArrayList.toString());
 		System.out.println(resArrayList2.toString());
+		String string="(123)";
+		System.out.println(string.substring(0,4));
 	}
 
 }
