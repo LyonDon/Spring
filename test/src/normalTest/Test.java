@@ -1,45 +1,45 @@
 package normalTest;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Test {
-
-	public static void main(String[] args) throws InterruptedException, ParseException {
-
-//		Scanner sc = new Scanner(System.in);
-//		int n = Integer.valueOf(sc.nextLine());
-//		Long[] array = new Long[n];
-//		for (int i = 0; i < n; i++) {
-//			String s = sc.nextLine();
-//
-//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd");
-//			Date oldTime = sdf.parse("2012 3 12");
-//			Date nowTime = sdf.parse(s);
-//
-//			Long long1 = oldTime.getTime();
-//			Long long2 = nowTime.getTime();
-//			Long day = (long2 - long1) / 1000 / 60 / 60 / 24;
-//			array[i] = day;
+	public static void main(String[] args) {
+		// Scanner scanner=new Scanner(System.in);
+		// String[] strings=scanner.nextLine().split(" ");
+		// int N=Integer.valueOf(strings[0]);
+		// for (int i = 0; i < N; i++) {
+		// String[] strings2=scanner.nextLine().split(" ");
+		// if (strings2[0].charAt(0)=='1') {
+		// System.out.println("true");
+		// }else {
+		// System.out.println("false");
+		// }
+		// }
+//		int[] array = { 1, 2, 3 };
+//		int[] res = change(array, 1, 8);
+//		for (int i = 0; i < array.length; i++) {
+//			System.out.println(res[i]);
 //		}
-//		for (int i = 0; i < n; i++) {
-//			System.out.println(array[i]);
+//		StringBuilder stringBuilder = new StringBuilder("ABN");
+//		stringBuilder.append("C");
+//		System.out.println(stringBuilder.toString());
+//		Scanner scanner=new Scanner(System.in);
+//		String[] strings=scanner.nextLine().split("\\.");
+//		for (int i = 0; i < strings.length; i++) {
+//			System.out.println(strings[i]);
 //		}
-		
-		ArrayList<ArrayList<Integer>> resArrayList=new ArrayList<ArrayList<Integer>>();
-		ArrayList<ArrayList<Integer>> resArrayList2=new ArrayList<ArrayList<Integer>>();
-		ArrayList<Integer> list=new ArrayList<Integer>();
-		list.add(1);
-		resArrayList.add(list);
-		resArrayList2.add(new ArrayList<Integer>(list));
-		System.out.println(resArrayList.toString());
-		System.out.println(resArrayList2.toString());
-		String string="(123)";
-		System.out.println(string.substring(0,4));
+		String string="ade";
+		System.out.println(string.charAt(0));
+		String string1="123";
+		String string2="123";
+		int flag=1;
+		int num=string1.charAt(2)-'0'+string2.charAt(2)-'0'+flag;
+		System.out.println(num);
 	}
 
+//	public static int[] change(int[] array, int i, int j) {
+//		array[i - 1] = j;
+//		return array;
+//		
+//	}
 }
