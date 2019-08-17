@@ -10,9 +10,12 @@ import javax.annotation.Resource;
  * @author Administrator
  *
  */
-public class Test1 {
+public abstract class Test1 {
 	ArrayList<String> res = new ArrayList<String>();
-
+	
+	public Test1() {
+	}
+	
 	public void sort(String in) {
 		System.out.println(res);
 	}
@@ -26,9 +29,10 @@ public class Test1 {
 		}
 		return string;
 	}
+	
+	public abstract int  name();
 
 	public static void main(String[] args) {
-		Test1 test22 = new Test1();
 		int[][] put = { { 3 }, { 2, 5, 6, 7, 9, 5, 6 }, { 3, 6, 9 } };
 		System.out.println((int)(10.5%1));
 	}

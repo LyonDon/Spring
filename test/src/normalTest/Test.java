@@ -1,45 +1,28 @@
 package normalTest;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Test {
 	public static void main(String[] args) {
-		// Scanner scanner=new Scanner(System.in);
-		// String[] strings=scanner.nextLine().split(" ");
-		// int N=Integer.valueOf(strings[0]);
-		// for (int i = 0; i < N; i++) {
-		// String[] strings2=scanner.nextLine().split(" ");
-		// if (strings2[0].charAt(0)=='1') {
-		// System.out.println("true");
-		// }else {
-		// System.out.println("false");
-		// }
-		// }
-//		int[] array = { 1, 2, 3 };
-//		int[] res = change(array, 1, 8);
-//		for (int i = 0; i < array.length; i++) {
-//			System.out.println(res[i]);
-//		}
-//		StringBuilder stringBuilder = new StringBuilder("ABN");
-//		stringBuilder.append("C");
-//		System.out.println(stringBuilder.toString());
-//		Scanner scanner=new Scanner(System.in);
-//		String[] strings=scanner.nextLine().split("\\.");
-//		for (int i = 0; i < strings.length; i++) {
-//			System.out.println(strings[i]);
-//		}
-		String string="ade";
-		System.out.println(string.charAt(0));
-		String string1="123";
-		String string2="123";
-		int flag=1;
-		int num=string1.charAt(2)-'0'+string2.charAt(2)-'0'+flag;
-		System.out.println(num);
+		ArrayList<Integer> arrayList=new ArrayList<Integer>();
+		arrayList.add(1);
+		arrayList.add(2);
+		arrayList.add(2);
+		arrayList.add(3);
+		arrayList.remove(arrayList.get(1));
+		arrayList.remove(arrayList.get(2));
+		System.out.println(arrayList.toString());
+		System.out.println(get_round(1, 5));
 	}
-
-//	public static int[] change(int[] array, int i, int j) {
-//		array[i - 1] = j;
-//		return array;
-//		
-//	}
+	public static int get_round(int i,int j) {
+		int n=j-i;
+		if (n==0) {
+			return 0;
+		}
+		int res=0;
+		for (int k = 1; k <= n; k++) {
+			res+=k;
+		}
+		return res;
+	}
 }

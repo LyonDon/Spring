@@ -9,12 +9,13 @@ import java.util.Stack;
  *
  */
 public class Solution14 {
-	public class ListNode {
-		int val;
-		ListNode next = null;
+	public static class ListNode {
+		public int val;
+		public ListNode next = null;
 
-		ListNode(int val) {
-			this.val = val;
+	public ListNode(int val) {
+			val = val;
+			next=null;
 		}
 	}
 
