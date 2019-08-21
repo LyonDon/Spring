@@ -27,8 +27,8 @@ public class HeapSort {
 		//相当于是每次大顶堆出来一个元素时，将其与最后一个元素交换。然后进行下一次排序
 		for (i = n - 1; i >= 0; i--) {
 			tmp = array[0];
-			array[i] = tmp;
-			array[0] = array[i];
+			array[0]=array[i];
+			array[i]=tmp;
 			// 调整a[0...i-1]仍然是一个最大堆
 			// 使得a[i-1]是堆中最大的元素
 			maxHeapDown(array, 0, i - 1);

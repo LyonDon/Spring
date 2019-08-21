@@ -1,5 +1,7 @@
 package SortTest;
 
+import java.util.Arrays;
+
 /**
  * 将待排序的数组分成前后两个部分，再递归的将前半部分数据和后半部分的数据各自归并排序，得到的两部分数据.
  * 然后使用merge合并算法（算法见代码）将两部分算法合并到一起。
@@ -66,10 +68,8 @@ public class MergeSort {
 	}
 	
 	public static void main(String[] args) {
-		int[] array={1,5,2,3,4};
+		int[] array={5,4,3,2,1};
 		mergeSort(array);
-		for (int i = 0; i < array.length; i++) {
-			System.out.println(array[i]);
-		}
+		System.out.println(Arrays.toString(array));
 	}
 }
