@@ -1,5 +1,7 @@
 package SortTest;
 
+import java.util.Arrays;
+
 /**
  * 在排序过程中，将R[l..n]看成是一棵完全二叉树的顺序存储结构，利用完全二叉树节点的内在关系，
  * 在当前无序区中选择关键字最大或者最小的记录。O(nlogn)
@@ -12,9 +14,7 @@ package SortTest;
 public class HeapSort {
 	/**
 	 * 堆排序 调整最大堆，交换根元素和最后一个元素
-	 * 
-	 * @param array
-	 *            待排序的数组
+	 * @param array 待排序的数组
 	 */
 	public static void heapSort(int[] array) {
 		int n = array.length;
@@ -37,13 +37,9 @@ public class HeapSort {
 
 	/**
 	 * 在数组实现的堆中，节点与其孩子节点下标的关系是，i节点的左孩子是2*i+1节点，右孩子是2*i+2节点
-	 * 
-	 * @param array
-	 *            待排序的数组
-	 * @param start
-	 *            被下调节点的起始位置
-	 * @param end
-	 *            终止位置
+	 * @param array 待排序的数组
+	 * @param start 被下调节点的起始位置
+	 * @param end 终止位置
 	 */
 	public static void maxHeapDown(int[] array, int start, int end) {
 		int current = start;// 当前节点的位置
@@ -61,5 +57,11 @@ public class HeapSort {
 				array[left]=tmp;
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		int[] array={5,4,3,2,1};
+		heapSort(array);
+		System.out.println(Arrays.toString(array));
 	}
 }

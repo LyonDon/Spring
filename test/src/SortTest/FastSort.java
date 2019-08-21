@@ -1,5 +1,7 @@
 package SortTest;
 
+import java.util.Arrays;
+
 /**
  * 两个方向，左边的i下标一直往右走，当a[i] <= a[center_index]，
  * 其中center_index是中枢元素的数组下标，而右边的j下标一直往左走，当a[j] > a[center_index] 如果i和j都走不动了，i <=
@@ -11,54 +13,26 @@ package SortTest;
  */
 public class FastSort {
 	public static void fastSort(int[] array, int start, int end) {
-//		int tmp;// 用于后面的元素交换
-//		int base = array[start];// 选择基准值为第一个元素
-//		int i = start;
-//		int j = end;
-//		if (start < end) {// 首先判断start要在end之前（一般情况下，start是0，end是array.length-1）
-//			do {
-//				while (i < end && array[i] < base) {
-//					i++;
-//				}
-//				while (j > start && array[j] > base) {
-//					j--;
-//				}
-//				while (i <= j) {
-//					tmp = array[i];
-//					array[i] = array[j];
-//					array[j] = tmp;
-//					i++;
-//					j--;
-//				}
-//			} while (i <= j);//一次排序过程结束
-//			//分别针对基准元素的左右子数组递归排序
-//			if (start < j) {
-//				fastSort(array, start, j);
-//			}
-//			if (i < end) {
-//				fastSort(array, i, end);
-//			}
-//		}
-		int tmp;
-		int base=array[start];
+		int tmp;//用于元素交换
+		int base=array[start];//设置基准元素
 		int i=start;
 		int j=end;
 		
-		do {
+		while(i<=j){
 			while(i<end&&array[i]<base){
 				i++;
 			}
 			while(j>start&&array[j]>base){
 				j--;
 			}
-			while(i<=j){
-				tmp=array[j];
-				array[j]=array[i];
-				array[i]=tmp;
+			if (i<=j) {
+				tmp=array[i];
+				array[i]=array[j];
+				array[j]=tmp;
 				i++;
 				j--;
 			}
-		} while (i<=j);
+		}
 		if (i<end) {
 			fastSort(array, i, end);
 		}
@@ -66,4 +40,11 @@ public class FastSort {
 			fastSort(array, start, j);
 		}
 	}
+
+	public static void main(String[] args) {
+		int[] array={5,4,3,2,1};
+		fastSort(array, 0, array.length-1);
+		System.out.println(Arrays.toString(array));
+	}
 }
+
