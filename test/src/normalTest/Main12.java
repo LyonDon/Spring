@@ -21,7 +21,6 @@ public class Main12 {
 		}
 		
 	}
-
 	public static void find(long[] array) {
 		Arrays.sort(array);
 		int length = array.length;

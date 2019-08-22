@@ -1,110 +1,49 @@
 package normalTest;
 
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
-public class Question {
-
-	public static int setChar(char[] array, char c, int index, int count) {
-		array[index] = c;
-		index++;
-		char[] cnt = String.valueOf(count).toCharArray();
-		for (char x : cnt) {
-			array[index] = x;
-			index++;
-		}
-		return index;
-	}
-	
-	public static int countCompression(String str) {
-		if (str == null || str.isEmpty()) return 0;
-		char last = str.charAt(0);
-		int size = 0;
-		int count = 1;
-		for (int i = 1; i < str.length(); i++) {
-			if (str.charAt(i) == last) {
-				count++;
-			} else {
-				last = str.charAt(i);
-				size += 1 + String.valueOf(count).length();
-				count = 1;
-			} 
-		}
-		size += 1 + String.valueOf(count).length();
-		return size;
-	}
-	
-	public static String compressBad(String str) {
-		int size = countCompression(str);
-		if (size >= str.length()) {
-			return str;
-		}
-		String mystr = "";
-		char last = str.charAt(0);
-		int count = 1;
-		for (int i = 1; i < str.length(); i++) {
-			if (str.charAt(i) == last) {
-				count++;
-			} else {
-				mystr += last + "" + count;
-				last = str.charAt(i);
-				count = 1;
-			}
-		}
-		return mystr + last + count;
-	}
-	
-	public static String compressBetter(String str) {
-		int size = countCompression(str);
-		if (size >= str.length()) {
-			return str;
-		}
-		StringBuffer mystr = new StringBuffer();
-		char last = str.charAt(0);
-		int count = 1;
-		for (int i = 1; i < str.length(); i++) {
-			if (str.charAt(i) == last) {
-				count++;
-			} else {
-				mystr.append(last);
-				mystr.append(count);
-				last = str.charAt(i);
-				count = 1;
-			}
-		}
-		mystr.append(last);
-		mystr.append(count);
-		return mystr.toString();
-	}	
-	
-	public static String compressAlternate(String str) {
-		int size = countCompression(str);
-		if (size >= str.length()) {
-			return str;
-		}
-		char[] array = new char[size];
-		int index = 0;
-		char last = str.charAt(0);
-		int count = 1;
-		for (int i = 1; i < str.length(); i++) {
-			if (str.charAt(i) == last) {
-				count++;
-			} else {
-				index = setChar(array, last, index, count);
-				last = str.charAt(i);
-				count = 1;
-			}
-		}
-		index = setChar(array, last, index, count);
-		return String.valueOf(array);
-	}
-	
+//遍历hashmap的几种方式
+public class Hashmap {
 	public static void main(String[] args) {
-		String str = "abbccccccde";
-		int c = countCompression(str);
-		String str2 = compressAlternate(str);
-		String t = compressBetter("");
-		System.out.println("Compression: " + t);
-		System.out.println("Old String (len = " + str.length() + "): " + str);
-		System.out.println("New String (len = " + str2.length() + "): " + str2);
-		System.out.println("Potential Compression: " + c);
+		Map<Integer, String> map=new LinkedHashMap<Integer, String>();
+		map.put(1,"one");
+		map.put(2,"two");
+		map.put(3,"three");
+		map.put(4,"four");
+		map.put(5,"five");
+		//通过keyset
+		for (Integer keyString : map.keySet()) {
+			System.out.println(keyString+":"+map.get(keyString));
+		}
+		//通过entryset
+		for (Entry<Integer, String> entry :map.entrySet()) {
+			System.out.println(entry.getKey()+":"+entry.getValue());
+		}
+		//通过values，只能遍历value
+		for (String string : map.values()) {
+			System.out.println(string);
+		}
+		//通过keyset返回Iterator集合
+		Iterator<Integer> iterator=map.keySet().iterator();
+		while(iterator.hasNext()){
+			Integer key=iterator.next();
+			System.out.println(key+":"+map.get(key));
+		}
+		//通过values返回Iterator集合
+		Iterator<String> iterator2=map.values().iterator();
+		while(iterator2.hasNext()){
+			String string=iterator2.next();
+			System.out.println(string);
+		}
+		//通过EntrySet返回Iterator集合
+		Iterator<Map.Entry<Integer, String>> iterator3=map.entrySet().iterator();
+		while(iterator3.hasNext()){
+			//这里不能直接用Iterator，这只是个迭代器
+			Map.Entry<Integer, String> entry=iterator3.next();
+			System.out.println(entry.getKey()+":"+entry.getValue());
+		}
 	}
 }

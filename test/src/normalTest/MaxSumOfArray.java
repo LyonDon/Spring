@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author Administrator
  *
  */
-public class Test10 {
+public class MaxSumOfArray {
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		int N=scanner.nextInt();
@@ -32,16 +32,5 @@ public class Test10 {
 			}
 		}
 		return res;
-		
-//		while(i<array.length){
-//			if (tmp>=0) {
-//				res=res>=tmp?res:tmp;
-//				tmp+=array[i];
-//				i++;
-//			}else {
-//				i++;
-//				tmp=0;
-//			}
-//		}
 	}
 }

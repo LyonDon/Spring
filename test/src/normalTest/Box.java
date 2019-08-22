@@ -5,7 +5,6 @@ import java.io.Serializable;
 /**
  * 序列化
  * @author Administrator
- *
  */
 public class Box implements Serializable{
 
