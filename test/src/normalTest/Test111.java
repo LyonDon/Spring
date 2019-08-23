@@ -1,6 +1,6 @@
 package normalTest;
 
-public interface Test111 extends Test22{
+public interface Test111{
 	public int name();
 	
 	public static int name2() {
