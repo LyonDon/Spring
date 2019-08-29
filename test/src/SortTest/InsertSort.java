@@ -16,7 +16,7 @@ public class InsertSort {
 			int j=i;
 			tmp=array[i];
 			for (;  j>0&&tmp<array[j-1]; j--) {
-				array[j]=array[j-1];
+				array[j]=array[j-1];//将当前元素之前的元素一个一个向后移动
 			}
 			array[j]=tmp;
 		}
