@@ -1,36 +1,19 @@
 package normalTest;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
  
 public class Test12 {
     public static void main(String[] args) {
-        int M=0 ,N=0;
-        int i;
-        int A = 0,B = 0;
-        Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
-                N = in.nextInt();
-                M = in.nextInt();  
-     
-    //          System.out.println (N + " " + M);
-                 
-            int[] score = new int[N];
-            for(i=0; in.hasNext() && i<N; i++){
-                score[i] = in.nextInt();
-    //          System.out.println (score[i] + " ");
-            }
-             
-            String c = null;
-             
-            for(i=0; in.hasNext() && i< M; i++){
-                c  = in.next();
-                A = in.nextInt();
-                B = in.nextInt();  
-                process(c,A,B,score);
-            }
-        }
-             
+    	ArrayList<Integer> arrayList=new ArrayList<Integer>();
+    	arrayList.add(1);
+    	arrayList.add(2);
+    	arrayList.add(3);
+    	arrayList.add(4);
+    	arrayList.add(5);
+    	System.out.println(Arrays.toString(arrayList.toArray()));
     }
  
     private static void process(String c, int a, int b, int[] score) {
