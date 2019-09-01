@@ -12,7 +12,7 @@
 
 [spring_transaction](https://github.com/LyonDon/Spring/tree/master/spring_transaction)
 
-*	基于spring事务管理的相关概念，实现了一个银行转账系统的后台
+*	基于spring事务管理的相关内容
 
 ### AOP
 
